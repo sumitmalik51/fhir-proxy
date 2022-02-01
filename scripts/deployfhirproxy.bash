@@ -561,7 +561,7 @@ echo "Starting Secure FHIR Proxy App ["$proxyAppName"] deployment..."
 	
 	echo "Creating Function App MSI for KeyVault Access..."
 	msi=$(az functionapp identity assign --subscription $subscriptionId --resource-group $resourceGroupName --name $proxyAppName --query "principalId" --out tsv)
-	Sleep 100
+	
 	echo $msi
 	echo $keyVaultName
 	echo "Setting KeyVault Policy to allow Secret access..."
